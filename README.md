@@ -22,8 +22,6 @@ Features
 - [C++23](https://www.isocpp.org)
 - [pspdev/pspdev](https://github.com/pspdev/pspdev)
 - [stezkmil/bullet3](https://github.com/stezkmil/bullet3)
-- [dogo/oslib](https://github.com/dogo/oslib)
-- [lodepng](https://github.com/lvandeve/lodepng)
 
 # Build
 
@@ -35,6 +33,8 @@ make install
 # References
 
 - [AMGLib-Plus SourceForge.net](https://sourceforge.net/projects/amglibplus)
+- [dogo/oslib](https://github.com/dogo/oslib)
+- [lodepng](https://github.com/lvandeve/lodepng)
 
 # Authors
 
