@@ -15,14 +15,15 @@ namespace amg
 	template<typename T>
 	concept scalar = std::integral<T> || std::floating_point<T>;
 
-	enum class align
+	enum class alg
 	{
-		none     = 0 << 0,
-		scalar   = 1 << 0,
-		vector   = 1 << 1,
-		matrix   = 1 << 2,
-		adaptive = 1 << 3,
+		unk = 0 << 0,
+		sca = 1 << 0,
+		vec = 1 << 1,
+		mat = 1 << 2,
+		std = 1 << 3,
 	};
+
 	using i64 = int64_t;
 	using i32 = int32_t;
 	using i16 = int16_t;
@@ -39,46 +40,46 @@ namespace amg
 	using f32 = float;
 	using f64 = double;
 
-	template<scalar T, size_t N = 1, enum align A = align::adaptive,  size_t N_POW2 = std::bit_ceil(N), size_t T_S = std::max<size_t>(alignof(T), sizeof(T))>
-	struct alignas((N == N_POW2 || A == align::vector) && A != align::scalar ? N * T_S : T_S) buf : std::array<T,N>
+	template<scalar T, size_t N = 1, enum alg A = alg::std,  size_t N_POW2 = std::bit_ceil(N), size_t T_S = std::max<size_t>(algof(T), sizeof(T))>
+	struct alignas((N == N_POW2 || A == alg::vec) && A != alg::sca ? N * T_S : T_S) buf : std::array<T,N>
 	{
 	};
 
 	namespace vec 
 	{
-		template<scalar T, size_t N = 1, enum align A = align::adaptive, size_t N_POW2 = std::bit_ceil<size_t>(N), size_t T_S = std::max<size_t>(alignof(T), sizeof(T))>
+		template<scalar T, size_t N = 1, enum alg A = alg::std, size_t N_POW2 = std::bit_ceil<size_t>(N), size_t T_S = std::max<size_t>(algof(T), sizeof(T))>
 		struct type : buf<T, N, A>
 		{
 		};
 
-		template<size_t N = 1, enum align A = align::adaptive>
+		template<size_t N = 1, enum alg A = alg::std>
 		using u64 = type<u64, N, A>;
-		template<size_t N = 1, enum align A = align::adaptive>
+		template<size_t N = 1, enum alg A = alg::std>
 		using u32 = type<u32, N, A>;
-		template<size_t N = 1, enum align A = align::adaptive>
+		template<size_t N = 1, enum alg A = alg::std>
 		using u16 = type<u16, N, A>;
-		template<size_t N = 1, enum align A = align::adaptive>
+		template<size_t N = 1, enum alg A = alg::std>
 		using u8  = type<u8 , N, A>;
 
-		template<size_t N = 1, enum align A = align::adaptive>
+		template<size_t N = 1, enum alg A = alg::std>
 		using s64 = type<s64, N, A>;
-		template<size_t N = 1, enum align A = align::adaptive>
+		template<size_t N = 1, enum alg A = alg::std>
 		using s32 = type<s32, N, A>;
-		template<size_t N = 1, enum align A = align::adaptive>
+		template<size_t N = 1, enum alg A = alg::std>
 		using s16 = type<s16, N, A>;
-		template<size_t N = 1, enum align A = align::adaptive>
+		template<size_t N = 1, enum alg A = alg::std>
 		using s8  = type<s8 , N, A>;
 
-		template<size_t N = 1, enum align A = align::adaptive>
+		template<size_t N = 1, enum alg A = alg::std>
 		using i64 = type<i64, N, A>;
-		template<size_t N = 1, enum align A = align::adaptive>
+		template<size_t N = 1, enum alg A = alg::std>
 		using i32 = type<i32, N, A>;
-		template<size_t N = 1, enum align A = align::adaptive>
+		template<size_t N = 1, enum alg A = alg::std>
 		using i16 = type<i16, N, A>;
-		template<size_t N = 1, enum align A = align::adaptive>
+		template<size_t N = 1, enum alg A = alg::std>
 		using i8  = type<i8 , N, A>;
 
-		template<size_t N = 1, enum align A = align::adaptive>
+		template<size_t N = 1, enum alg A = alg::std>
 		using f32 = type<f32, N, A>;
 	};
 

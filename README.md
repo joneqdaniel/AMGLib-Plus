@@ -38,4 +38,4 @@ make install
 
 # Authors
 
-🄯 [Andrés Margar](https://sourceforge.net/u/andresmargar/profile/) [\<andresbetis98@hotmail.com\>](mailto:andresbetis98@hotmail.com)
+🄯 [Andrés Martínez (Andresmargar)](https://sourceforge.net/u/andresmargar/profile/) [\<andresbetis98@hotmail.com\>](mailto:andresbetis98@hotmail.com)
