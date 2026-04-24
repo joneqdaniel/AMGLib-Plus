@@ -7,7 +7,7 @@ It's a remake of an older library (AMGLib), but while recompiling and fixing its
 What are you waiting for? Download AMGLib today!! It's Open Source!!
 Features
 
- <F2>   Custom VRAM allocating system
+    Custom VRAM allocating system
     3D and 2D graphics combined together
     2D Sprites and SFonts
     Textures: Swizzling, Alpha-Blending, Screenshots...
@@ -18,10 +18,12 @@ Features
 
 # Dependencies
 
-- [C23][6]
-- [C++23][5]
-- [pspdev/pspdev][4]
-- [bulletphysics/bullet3][1]
+- [C23](https://www.open-std.org/jtc1/sc22/wg14/www/wg14_document_log)
+- [C++23](https://www.isocpp.org)
+- [pspdev/pspdev](https://github.com/pspdev/pspdev)
+- [stezkmil/bullet3](https://github.com/stezkmil/bullet3)
+- [dogo/oslib](https://github.com/dogo/oslib)
+- [lodepng](https://github.com/lvandeve/lodepng)
 
 # Build
 
@@ -32,19 +34,7 @@ make install
 
 # References
 
-- [AMGLib-Plus SourceForge.net][0]
-- [bullet3][1]
-- [OSLib][2]
-- [lodepng][3]
-- [pspdev][4]
-
-[0]: https://sourceforge.net/projects/amglibplus
-[1]: https://github.com/bulletphysics/bullet3
-[2]: https://github.com/dogo/oslib
-[3]: https://github.com/lvandeve/lodepng
-[4]: https://github.com/pspdev/pspdev
-[5]: https://github.com/cplusplus/draft
-[6]: https://www.open-std.org/JTC1/SC22/WG14/
+- [AMGLib-Plus SourceForge.net](https://sourceforge.net/projects/amglibplus)
 
 # Authors
 
