@@ -347,7 +347,7 @@ void AMG_RenderMirrorObject(AMG_Object *obj, u8 axis, u8 inv);
  * @return No devuelve nada
  */
 #endif
-static inline void AMG_FinishReflection(void){
+static AMG_INLINE void AMG_FinishReflection(void){
 	sceGuDisable(GU_STENCIL_TEST);
 }
 
@@ -385,7 +385,7 @@ void AMG_RenderShadow(AMG_Object *obj, u8 l, ScePspFVector4 *plane);
  * @return No devuelve nada
  */
 #endif
-static inline void AMG_SetObjectMultiTexture(AMG_ObjectGroup *obj, AMG_Texture *tex){
+static AMG_INLINE void AMG_SetObjectMultiTexture(AMG_ObjectGroup *obj, AMG_Texture *tex){
 	tex->TFX = GU_TFX_MODULATE;
 	obj->MultiTexture = tex;
 }
@@ -425,9 +425,9 @@ void AMG_PlaneEquation(ScePspFVector3 *points, ScePspFVector4 *p);
 void AMG_GenerateFloorPoints(AMG_Object *obj, ScePspFVector3 *points);
 
 // Los TFX disponibles
-#define AMG_NO_LIGHT 					GU_TFX_DECAL
-#define AMG_LIGHT						GU_TFX_MODULATE
-#define AMG_LIGHT_AND_COLOR_BLENDING	GU_TFX_BLEND
+#define AMG_NO_LIGHT                 GU_TFX_DECAL
+#define AMG_LIGHT                    GU_TFX_MODULATE
+#define AMG_LIGHT_AND_COLOR_BLENDING GU_TFX_BLEND
 
 /*
 AMG_Animation *AMG_LoadAnimation(char *path);

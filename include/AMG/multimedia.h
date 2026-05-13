@@ -10,6 +10,7 @@
 #include <pspkerneltypes.h>
 #include <pspmp3.h>
 #include <AMG/config.h>
+#include <AMG/platform.h>
 
 #ifndef AMG_COMPILE_ONELUA
 
@@ -187,7 +188,7 @@ void AMG_UpdateMP3(AMG_MP3 *mp3);
  * @return No devuelve nada
  */
 #endif
-static inline void AMG_PlayMP3(AMG_MP3 *mp3){
+static AMG_INLINE void AMG_PlayMP3(AMG_MP3 *mp3){
 	mp3->Play = 1;
 }
 
@@ -204,7 +205,7 @@ static inline void AMG_PlayMP3(AMG_MP3 *mp3){
  * @return No devuelve nada
  */
 #endif
-static inline void AMG_PauseMP3(AMG_MP3 *mp3){
+static AMG_INLINE void AMG_PauseMP3(AMG_MP3 *mp3){
 	mp3->Play = 0;
 }
 
@@ -221,7 +222,7 @@ static inline void AMG_PauseMP3(AMG_MP3 *mp3){
  * @return No devuelve nada
  */
 #endif
-static inline void AMG_StopMP3(AMG_MP3 *mp3){
+static AMG_INLINE void AMG_StopMP3(AMG_MP3 *mp3){
 	mp3->Play = 0;
 	sceMp3ResetPlayPosition(mp3->Handle);
 }
@@ -241,7 +242,7 @@ static inline void AMG_StopMP3(AMG_MP3 *mp3){
  * @return No devuelve nada
  */
 #endif
-static inline void AMG_SetLoopMP3(AMG_MP3 *mp3, u8 loop){
+static AMG_INLINE void AMG_SetLoopMP3(AMG_MP3 *mp3, u8 loop){
 	mp3->Loop = (loop == 0 ? -1 : 0);
 	sceMp3SetLoopNum(mp3->Handle, mp3->Loop);
 }

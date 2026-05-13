@@ -6,4 +6,4 @@ CMakeCache.txt
 Makefile
 libAMG.*
 liblodepng.*
-
+examples/rendertotexture/Photo.png

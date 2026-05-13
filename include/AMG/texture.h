@@ -9,6 +9,7 @@
 #include <psptypes.h>
 #include <stdarg.h>
 #include <AMG/config.h>
+#include <AMG/platform.h>
 #include <pspgu.h>
 
 #ifdef AMG_DOC_ENGLISH
@@ -354,7 +355,7 @@ void AMG_SwizzleTexture(AMG_Texture *tex);
  * @see <pspgu.h>
  */
 #endif
-static inline void AMG_DisableTexture(void){
+static AMG_INLINE void AMG_DisableTexture(void){
 	sceGuDisable(GU_TEXTURE_2D);
 }
 

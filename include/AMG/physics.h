@@ -103,7 +103,7 @@ void AMG_SetWorldGravity(float x, float y, float z);
  * @return No devuelve nada
  */
 #endif
-static inline void AMG_ObjectConfPhysics(AMG_Object *obj, float ox, float oy, float oz, float x, float y, float z, float mass, u32 shapetype){
+static AMG_INLINE void AMG_ObjectConfPhysics(AMG_Object *obj, float ox, float oy, float oz, float x, float y, float z, float mass, u32 shapetype){
 	obj->Origin.x = ox; obj->Origin.y = oy; obj->Origin.z = oz;
 	obj->Pos.x = x; obj->Pos.y = y; obj->Pos.z = z;
 	obj->Mass = mass; obj->ShapeType = shapetype;
@@ -216,7 +216,7 @@ AMG_Object *AMG_CreateHeightmap(char *map, char *tex, float minheight, float max
  * @return No devuelve nada
  */
 #endif
-inline void AMG_UnloadHeightmap(AMG_Object *obj){
+AMG_INLINE void AMG_UnloadHeightmap(AMG_Object *obj){
 	AMG_UnloadObject(obj);
 }
 

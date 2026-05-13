@@ -9,6 +9,7 @@
 #include <psptypes.h>
 #include <pspgu.h>
 #include <AMG/config.h>
+#include <AMG/platform.h>
 #include <pspkernel.h>
 
 #ifdef AMG_DOC_ENGLISH
@@ -341,7 +342,7 @@ void AMG_Error(u8 errorcode, u32 aux, const char *text, ...);
  * @return No devuelve nada
  */
 #endif
-static inline void AMG_ClearDCache(u8 inv){
+static AMG_INLINE void AMG_ClearDCache(u8 inv){
 	inv ? sceKernelDcacheWritebackInvalidateAll() : sceKernelDcacheWritebackAll();
 }
 
@@ -539,7 +540,7 @@ void AMG_EnableLight(u8 n);
  * @return No devuelve nada
  */
 #endif
-static inline void AMG_DisableLight(u8 n){
+static AMG_INLINE void AMG_DisableLight(u8 n){
 	sceGuDisable(GU_LIGHT0 + n);
 }
 
@@ -554,7 +555,7 @@ static inline void AMG_DisableLight(u8 n){
  * @return No devuelve nada
  */
 #endif
-static inline void AMG_DisableLightAll(void){
+static AMG_INLINE void AMG_DisableLightAll(void){
 	sceGuDisable(GU_LIGHT0);
 	sceGuDisable(GU_LIGHT1);
 	sceGuDisable(GU_LIGHT2);
@@ -592,7 +593,7 @@ void AMG_EnableFog(float near, float far, u32 color);
  * @return No devuelve nada
  */
 #endif
-static inline void AMG_DisableFog(void){
+static AMG_INLINE void AMG_DisableFog(void){
 	sceGuDisable(GU_FOG);
 }
 
@@ -637,7 +638,7 @@ void AMG_SetCamera(AMG_Camera *cam);
  * @return No devuelve nada
  */
 #endif
-static inline void AMG_SetAntialias(u8 i){
+static AMG_INLINE void AMG_SetAntialias(u8 i){
 	if(i) sceGuEnable(GU_LINE_SMOOTH);
 	else sceGuDisable(GU_LINE_SMOOTH);
 }

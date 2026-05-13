@@ -27,6 +27,7 @@
 
 // Includes AMGLib
 #include <AMG/config.h>		// Opciones de compilación
+#include <AMG/platform.h>
 #include <AMG/model.h>
 #include <AMG/thread.h>
 #include <AMG/user.h>
