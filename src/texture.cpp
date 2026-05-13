@@ -128,7 +128,7 @@ AMG_Texture *AMG_CreateTexture(u16 width, u16 height, u32 psm, u8 load){
 }
 
 // Carga una textura en formato PNG o JPG
-AMG_Texture *AMG_LoadTexture(char *path, u8 load){
+AMG_Texture *AMG_LoadTexture(const char *path, u8 load){
 	
 	// Crea la textura
 	AMG_Texture *tex = (AMG_Texture*) calloc (1, sizeof(AMG_Texture));
@@ -214,7 +214,7 @@ AMG_Texture *AMG_LoadTexture(char *path, u8 load){
 			int r;
 			if((r = sceJpegInitMJpeg()) != 0){ AMG_Error(AMG_MODULE_INIT, r, "SceJpeg"); return NULL;}
 			sceJpegCreateMJpeg(tex->Width, tex->Height);
-			if(sceJpegDecodeMJpeg(buf, size, tex->Data, 0) <= 0){ AMG_Error(AMG_CUSTOM_ERROR, 0, "Couldn't decode JPEG: \"%s\"", path); return NULL;}
+			if(sceJpegDecodeMJpeg(buf, size, (u8*)tex->Data, 0) <= 0){ AMG_Error(AMG_CUSTOM_ERROR, 0, "Couldn't decode JPEG: \"%s\"", path); return NULL;}
 			sceJpegDeleteMJpeg();
 			sceJpegFinishMJpeg();
 			free(buf); buf = NULL;

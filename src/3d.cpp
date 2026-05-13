@@ -328,7 +328,7 @@ void AMG_Init3D(int options){
 	// Inicializa el lightmap
 	AMG.Lightmap = (void*) AMG_CreateTexture(32, 32, GU_PSM_8888, AMG_TEX_VRAM);
 	AMG_Texture *l = (AMG_Texture*)AMG.Lightmap;
-	memcpy(l->Data, lightmap, 64*64*4);
+	memcpy(l->Data, lightmap, 32*32*4);
 	AMG_SetTextureMapping(l, GU_ENVIRONMENT_MAP, 2, 3);
 	
 	// Comienza el dibujado

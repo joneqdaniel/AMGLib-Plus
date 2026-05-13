@@ -40,14 +40,14 @@ namespace amg
 	using f32 = float;
 	using f64 = double;
 
-	template<scalar T, size_t N = 1, enum alg A = alg::std,  size_t N_POW2 = std::bit_ceil(N), size_t T_S = std::max<size_t>(algof(T), sizeof(T))>
+	template<scalar T, size_t N = 1, enum alg A = alg::std,  size_t N_POW2 = std::bit_ceil(N), size_t T_S = std::max<size_t>(alignof(T), sizeof(T))>
 	struct alignas((N == N_POW2 || A == alg::vec) && A != alg::sca ? N * T_S : T_S) buf : std::array<T,N>
 	{
 	};
 
 	namespace vec 
 	{
-		template<scalar T, size_t N = 1, enum alg A = alg::std, size_t N_POW2 = std::bit_ceil<size_t>(N), size_t T_S = std::max<size_t>(algof(T), sizeof(T))>
+		template<scalar T, size_t N = 1, enum alg A = alg::std, size_t N_POW2 = std::bit_ceil<size_t>(N), size_t T_S = std::max<size_t>(alignof(T), sizeof(T))>
 		struct type : buf<T, N, A>
 		{
 		};

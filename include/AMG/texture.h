@@ -142,7 +142,7 @@ void AMG_FreeSharedTexture(void);
  * @return Puntero a la textura donde se carga
  */
 #endif
-AMG_Texture *AMG_LoadTexture(char *path, u8 load);
+AMG_Texture *AMG_LoadTexture(const char *path, u8 load);
 
 #ifdef AMG_DOC_ENGLISH
 /**
